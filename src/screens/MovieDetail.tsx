@@ -101,7 +101,7 @@ const MovieDetail = (): JSX.Element => {
 
       await AsyncStorage.setItem('@FavoriteList', JSON.stringify(favMovieList));
       setIsFavorite(true);
-      navigation.navigate('Home'); // Refresh favorite screen
+      navigation.navigate('Home');
     } catch (error) {
       console.log(error);
     }

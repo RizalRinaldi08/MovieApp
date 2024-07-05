@@ -46,7 +46,7 @@ const Favorite = (): JSX.Element => {
   }, [isFocused]);
 
   const navigateToMovieDetail = (movie: Movie) => {
-    navigation.navigate('MovieDetail', { movie }); // Navigate to MovieDetail and pass movie data
+    navigation.navigate('MovieDetail', { movie });
   };
 
   const renderFavoriteMovies = () => {
@@ -54,7 +54,7 @@ const Favorite = (): JSX.Element => {
     let rowIndex = 0;
 
     for (let i = 0; i < favorites.length; i += 3) {
-      const rowMovies = favorites.slice(i, i + 3); // Get 3 movies for current row
+      const rowMovies = favorites.slice(i, i + 3); 
       rows.push(
         <View style={styles.row} key={rowIndex++}>
           {rowMovies.map((movie) => (
