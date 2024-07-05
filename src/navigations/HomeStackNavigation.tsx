@@ -1,21 +1,25 @@
-// src/navigations/HomeStackNavigation.tsx
+// File: HomeStackNavigation.tsx
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import MovieDetail from '../screens/MovieDetail';
-
-// export type HomeStackParamList = {
-//   Home: undefined;
-//   MovieDetail: undefined;
-// };
+import Favorite from '../screens/Favorite';
+import GenreMovies from '../screens/GenreMovies';
 
 const Stack = createNativeStackNavigator();
 
-const HomeStackNavigation = (): JSX.Element => (
-  <Stack.Navigator initialRouteName="Home">
-    <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
-    <Stack.Screen name="MovieDetail" component={MovieDetail} />
-  </Stack.Navigator>
-);
-
-export default HomeStackNavigation;
+export default function HomeStackNavigation(): JSX.Element {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='Home'
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name='MovieDetail' component={MovieDetail} />
+      <Stack.Screen name='Favorite' component={Favorite} />
+      <Stack.Screen name='GenreMovies' component={GenreMovies} />
+    </Stack.Navigator>
+  );
+}
